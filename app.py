@@ -60,7 +60,6 @@ class ItemList(Resource):
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(ItemList, '/items')
 
-
 # app.run basically starts the development server on your localhost on the specified port.
 # debug=True helps in debug the code in case of errors
 app.run(port=4000, debug=True)
