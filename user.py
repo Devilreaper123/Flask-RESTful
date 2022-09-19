@@ -8,6 +8,7 @@ class User:
         self.password = password
 
 
+
     def find_by_username(self,username):
         connection = sqlite3.connect('data.db')
         cursor = connection.cursor()
