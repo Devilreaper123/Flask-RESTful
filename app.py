@@ -3,9 +3,14 @@ from flask import Flask, request
 from flask_restful import Resource, Api, reqparse
 from flask_jwt import JWT, jwt_required
 from security import authenticate, identity
+from user import UserRegister
+
+
 app = Flask(__name__)
 app.secret_key = 'jose'
 api = Api(app)
+
+
 # Using JWT to create a new endpoint for Authentication
 jwt = JWT(app, authenticate, identity)  # Creates a new endpoint named /auth
 items = []
@@ -60,6 +65,7 @@ class ItemList(Resource):
 # api.add_resource is used to create the endpoint for
 api.add_resource(Item, '/item/<string:name>')
 api.add_resource(ItemList, '/items')
+api.add_resource(UserRegister , '/register')
 
 # app.run basically starts the development server on your localhost on the specified port.
 # debug=True helps in debug the code in case of errors
