@@ -1,10 +1,8 @@
-import sqlite3
-
-
 class User:
     def __init__(self, _id, username, password):
         self.id = _id
         self.username = username
+<<<<<<< HEAD
         self.password = password
 
     @classmethod
@@ -36,3 +34,6 @@ class User:
             user = None
         connection.close()
         return user
+=======
+        self.password = password
+>>>>>>> Sec5
